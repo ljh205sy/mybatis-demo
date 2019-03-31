@@ -9,3 +9,10 @@
 > * 自定义生成的model的注解说明， mybatis generator 自定义comment生成器. 基于MBG 1.3.2.
 > *  运行MainGererator.java的main方法，生成对应的文件
 
+# mybatis-spring项目为maven下的与spring整合项目
+
+
+# mybatis-spring-boot项目为springboot下整合项目
+
+
+# simple项目为普通java项目整合
