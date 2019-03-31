@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<!-- Log4j输出日志 -->
+    <settings>
+        <!-- <setting name="logImpl" value="SLF4J"/> --> <!-- STDOUT_LOGGING -->
+        
+        <!-- 通过配置如下属性，可以自动将以下划线命名的数据库字段列映射到java对象命名的驼峰式命名属性中，默认false -->
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+    </settings>
+    <!-- 配置了一个包的别名，通常使用一个类的时候需要指定使用类的全限定名称 -->
+     <typeAliases>
+        <package name="tk.mybatis.simple.model"/>
+    </typeAliases>
+
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC">
+                <property name="" value=""/>
+            </transactionManager>
+            <dataSource type="UNPOOLED">
+                <property name="driver" value="com.mysql.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql://127.0.0.1:3306/mybatis?useUnicode=true&amp;useSSL=false&amp;characterEncoding=UTF-8"/>
+                <property name="username" value="root"/>
+                <property name="password" value="123456"/>
+            </dataSource>
+        </environment>
+    </environments>
+    
+    <mappers>
+        <mapper resource="tk/mybatis/simple/mapper/CountryMapper.xml"/>
+        <mapper resource="tk/mybatis/simple/mapper/SysUserMapper.xml"/>
+    </mappers>
+    
+    <!-- 第二种方式，或者采用扫描包下Mapper接口,不需要定义多个Mapper.xml文件
+    <mappers>
+    	<package name="tk.mybatis.simple.mapper"></package>
+    </mappers> -->
+</configuration>
